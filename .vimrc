@@ -14,8 +14,11 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
-call plug#begin('~/.vim/plugged')
-
+call plug#begin('~/.vim/autoload')
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'json', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'pangloss/vim-javascript'
 Plug 'storyn26383/vim-vue'
 Plug 'tpope/vim-fugitive'
